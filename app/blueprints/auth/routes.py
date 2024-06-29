@@ -29,7 +29,7 @@ def register():
     form = RegistrationForm()
     if form.validate_on_submit():
         from app.blueprints.auth.models import User
-        user = User(username=form.username.data, role='usuario', agency='default')
+        user = User(username=form.username.data, role=form.role.data, agency=form.agency.data)
         user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()

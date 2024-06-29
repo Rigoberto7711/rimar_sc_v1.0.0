@@ -13,6 +13,8 @@ class RegistrationForm(FlaskForm):
     password = PasswordField('Password', validators=[DataRequired()])
     password2 = PasswordField(
         'Repeat Password', validators=[DataRequired(), EqualTo('password')])
+    agency = SelectField('Agency', choices=[('Wiwili3', 'Wiwili3'), ('Jicaro4', 'Jicaro4')], validators=[DataRequired()])
+    role = SelectField('Role', choices=[('administrador', 'Administrador'), ('supervisor', 'Supervisor'), ('usuario', 'Usuario')], validators=[DataRequired()])
     submit = SubmitField('Register')
 
     def validate_username(self, username):
