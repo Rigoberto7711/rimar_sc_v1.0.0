@@ -1,35 +1,39 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <title>Register</title>
-  </head>
-  <body>
+</head>
+<body>
     <h1>Register</h1>
     <form method="POST" action="">
-      {{ form.hidden_tag() }}
-      <p>
-        {{ form.username.label }}<br>
-        {{ form.username(size=32) }}
-      </p>
-      <p>
-        {{ form.password.label }}<br>
-        {{ form.password(size=32) }}
-      </p>
-      <p>
-        {{ form.password2.label }}<br>
-        {{ form.password2(size=32) }}
-      </p>
-      <p>
-        {{ form.agency.label }}<br>
-        {{ form.agency() }}
-      </p>
-      <p>
-        {{ form.role.label }}<br>
-        {{ form.role() }}
-      </p>
-      <p>{{ form.submit() }}</p>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.username.label }}<br>
+            {{ form.username(size=32) }}
+        </p>
+        <p>
+            {{ form.email.label }}<br>
+            {{ form.email(size=32) }}
+        </p>
+        <p>
+            {{ form.password.label }}<br>
+            {{ form.password(size=32) }}
+        </p>
+        <p>
+            {{ form.password2.label }}<br>
+            {{ form.password2(size=32) }}
+        </p>
+        <p>
+            {{ form.agency.label }}<br>
+            {{ form.agency() }}
+        </p>
+        <p>
+            {{ form.role.label }}<br>
+            {{ form.role() }}
+        </p>
+        <p>{{ form.submit() }}</p>
     </form>
     <p><a href="{{ url_for('main.index') }}">Home</a></p>
-  </body>
+</body>
 </html>
