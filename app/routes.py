@@ -1,5 +1,7 @@
 from flask import render_template, Blueprint
 from flask_login import login_required, current_user
+from app import db
+from sqlalchemy import text  # Asegúrate de que esta línea esté presente
 
 main_bp = Blueprint('main', __name__)
 
@@ -18,3 +20,9 @@ def admin():
     if current_user.role != 'administrador':
         return render_template('403.html'), 403
     return render_template('admin.html')
+
+@main_bp.route('/cause_error')
+def cause_error():
+    # Intentionally cause a database error by querying a non-existent table
+    result = db.session.execute(text('SELECT * FROM non_existent_table'))
+    return result.fetchall()

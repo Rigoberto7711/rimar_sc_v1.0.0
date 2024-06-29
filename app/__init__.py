@@ -31,4 +31,7 @@ def create_app(config_name=None):
         from app.routes import main_bp
         app.register_blueprint(main_bp)
 
+        from app.errors import register_error_handlers
+        register_error_handlers(app)
+
     return app
