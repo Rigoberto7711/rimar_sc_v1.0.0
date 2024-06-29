@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}Edit Profile{% endblock %}
+
+{% block content %}
+<h1>Edit Profile</h1>
+<form method="POST" action="">
+  {{ form.hidden_tag() }}
+  <p>
+    {{ form.username.label }}<br>
+    {{ form.username(size=32) }}
+  </p>
+  <p>
+    {{ form.email.label }}<br>
+    {{ form.email(size=32) }}
+  </p>
+  <p>{{ form.submit() }}</p>
+</form>
+<p><a href="{{ url_for('main.index') }}">Home</a></p>
+{% endblock %}

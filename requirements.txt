@@ -4,4 +4,7 @@ Flask-Migrate
 Flask-WTF
 Flask-Login
 Flask-Bootstrap
+Flask-Mail
 pytest
+PyJWT
+email_validator
