@@ -1,0 +1,52 @@
+<!-- app/templates/tasas/index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Lista de Tasas de Cambio</title>
+</head>
+<body>
+    <h1>Lista de Tasas de Cambio</h1>
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        {{ form.csrf_token }}
+        <p>
+            {{ form.fecha.label }}<br>
+            {{ form.fecha() }}
+        </p>
+        <p>
+            {{ form.tasa_oficial.label }}<br>
+            {{ form.tasa_oficial() }}
+        </p>
+        <p>
+            {{ form.tasa_compra.label }}<br>
+            {{ form.tasa_compra() }}
+        </p>
+        <p>
+            {{ form.tasa_venta.label }}<br>
+            {{ form.tasa_venta() }}
+        </p>
+        <p>
+            {{ form.tasa_wu.label }}<br>
+            {{ form.tasa_wu() }}
+        </p>
+        <p>
+            {{ form.tasac_bancos.label }}<br>
+            {{ form.tasac_bancos() }}
+        </p>
+        <p>
+            {{ form.tasav_bancos.label }}<br>
+            {{ form.tasav_bancos() }}
+        </p>
+        <p>
+            {{ form.tasap_banpro.label }}<br>
+            {{ form.tasap_banpro() }}
+        </p>
+        <p>
+            {{ form.tasap_lafise.label }}<br>
+            {{ form.tasap_lafise() }}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+</body>
+</html>

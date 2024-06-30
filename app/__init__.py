@@ -32,6 +32,9 @@ def create_app(config_class=Config):
         from app.blueprints.auth import auth_bp
         app.register_blueprint(auth_bp, url_prefix='/auth')
 
+        from app.blueprints.tasas import tasas_bp
+        app.register_blueprint(tasas_bp, url_prefix='/tasas')
+
         from app.routes import main_bp
         app.register_blueprint(main_bp)
 
