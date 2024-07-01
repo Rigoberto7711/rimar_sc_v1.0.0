@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% block title %}Definir Tasas Diarias{% endblock %}
+{% block content %}
+<div class="container text-center my-5 border border-1 rounded p-5 shadow">
+    <h2>Definir Tasas Diarias</h2>
+    <div class="border-top my-3"></div>
+    <form action="{{ url_for('tasas.definir_tasas') }}" method="post" class="d-flex flex-column">
+        {{ form.hidden_tag() }}
+        <div class="mb-3">
+            {{ form.fecha.label(class="form-label") }}
+            {{ form.fecha(class="form-control") }}
+            {% if form.fecha.errors %}
+                <div class="alert alert-danger">
+                    {% for error in form.fecha.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="mb-3">
+            {{ form.tasa_oficial.label(class="form-label") }}
+            {{ form.tasa_oficial(class="form-control") }}
+            {% if form.tasa_oficial.errors %}
+                <div class="alert alert-danger">
+                    {% for error in form.tasa_oficial.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="mb-3">
+            {{ form.tasa_compra.label(class="form-label") }}
+            {{ form.tasa_compra(class="form-control") }}
+            {% if form.tasa_compra.errors %}
+                <div class="alert alert-danger">
+                    {% for error in form.tasa_compra.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="mb-3">
+            {{ form.tasa_venta.label(class="form-label") }}
+            {{ form.tasa_venta(class="form-control") }}
+            {% if form.tasa_venta.errors %}
+                <div class="alert alert-danger">
+                    {% for error in form.tasa_venta.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="mb-3">
+            {{ form.tasa_wu.label(class="form-label") }}
+            {{ form.tasa_wu(class="form-control") }}
+            {% if form.tasa_wu.errors %}
+                <div class="alert alert-danger">
+                    {% for error in form.tasa_wu.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="mb-3">
+            {{ form.tasac_bancos.label(class="form-label") }}
+            {{ form.tasac_bancos(class="form-control") }}
+            {% if form.tasac_bancos.errors %}
+                <div class="alert alert-danger">
+                    {% for error in form.tasac_bancos.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="mb-3">
+            {{ form.tasav_bancos.label(class="form-label") }}
+            {{ form.tasav_bancos(class="form-control") }}
+            {% if form.tasav_bancos.errors %}
+                <div class="alert alert-danger">
+                    {% for error in form.tasav_bancos.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="mb-3">
+            {{ form.tasap_banpro.label(class="form-label") }}
+            {{ form.tasap_banpro(class="form-control") }}
+            {% if form.tasap_banpro.errors %}
+                <div class="alert alert-danger">
+                    {% for error in form.tasap_banpro.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="mb-3">
+            {{ form.tasap_lafise.label(class="form-label") }}
+            {{ form.tasap_lafise(class="form-control") }}
+            {% if form.tasap_lafise.errors %}
+                <div class="alert alert-danger">
+                    {% for error in form.tasap_lafise.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="border-top my-3"></div>
+        {{ form.submit(class="btn btn-primary") }}
+    </form>
+</div>
+{% endblock %}
