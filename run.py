@@ -1,6 +1,11 @@
-from app import create_app
+from app import create_app, db
+from app.blueprints.auth.models import Usuario
 
 app = create_app()
 
+@app.shell_context_processor
+def make_shell_context():
+    return {'db': db, 'Usuario': Usuario}
+
 if __name__ == "__main__":
-    app.run(debug=True) # False: se ejecutan los manejadores de errores 
+    app.run(debug=True)

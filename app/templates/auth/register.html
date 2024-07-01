@@ -1,12 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="utf-8">
     <title>Register</title>
 </head>
 <body>
     <h1>Register</h1>
-    <form method="POST" action="">
+    <form method="post">
         {{ form.hidden_tag() }}
         <p>
             {{ form.username.label }}<br>
@@ -26,14 +25,15 @@
         </p>
         <p>
             {{ form.agency.label }}<br>
-            {{ form.agency() }}
+            {{ form.agency(size=32) }}
         </p>
         <p>
             {{ form.role.label }}<br>
-            {{ form.role() }}
+            {{ form.role(size=32) }}
         </p>
         <p>{{ form.submit() }}</p>
     </form>
-    <p><a href="{{ url_for('main.index') }}">Home</a></p>
+    <!-- Cambia 'main.index' por 'auth.login' o cualquier endpoint existente -->
+    <p><a href="{{ url_for('auth.login') }}">Home</a></p>
 </body>
 </html>
