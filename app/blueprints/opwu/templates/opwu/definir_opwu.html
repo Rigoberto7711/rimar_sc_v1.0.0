@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Definir Operación Wu{% endblock %}
+{% block content %}
+<div class="container my-5">
+    <h2>Definir Operación de Western Union</h2>
+    <div class="border-top my-3"></div>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <div class="mb-3">
+            {{ form.transaccion.label(class="form-label") }}
+            {{ form.transaccion(class="form-control") }}
+        </div>
+        <div class="mb-3">
+            {{ form.tipo_operacion.label(class="form-label") }}
+            {{ form.tipo_operacion(class="form-control") }}
+        </div>
+        <!-- Agregar el resto de los campos aquí de manera similar -->
+        <div class="mb-3">
+            {{ form.submit(class="btn btn-primary") }}
+        </div>
+    </form>
+</div>
+{% endblock %}

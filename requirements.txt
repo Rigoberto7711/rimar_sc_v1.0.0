@@ -8,3 +8,4 @@ Flask-Mail
 pytest
 PyJWT
 email_validator
+

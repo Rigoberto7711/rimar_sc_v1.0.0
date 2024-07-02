@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}Listar Operaciones Wu{% endblock %}
+{% block content %}
+<div class="container my-5">
+    <h2>Operaciones de Western Union</h2>
+    <div class="border-top my-3"></div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Usuario ID</th>
+                <th>Agencia</th>
+                <th>Transacción</th>
+                <th>Tipo de Operación</th>
+                <th>Monto TrUS</th>
+                <!-- Agregar el resto de los encabezados de las columnas aquí -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for opwu in operaciones %}
+            <tr>
+                <td>{{ opwu.id }}</td>
+                <td>{{ opwu.usuario_id }}</td>
+                <td>{{ opwu.agencia }}</td>
+                <td>{{ opwu.transaccion }}</td>
+                <td>{{ opwu.tipo_operacion }}</td>
+                <td>{{ opwu.montotrus }}</td>
+                <!-- Agregar el resto de los valores de las columnas aquí -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
